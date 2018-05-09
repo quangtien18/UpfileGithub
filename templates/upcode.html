@@ -1,0 +1,214 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<header>
+   <h1>Hướng dẫn cách up code hoặc dự án lên Github</h1>
+</header>
+<hr size="2px" color="red" />
+    <div>
+        <p>
+            <h1>Cài đặt và sử dụng Git trên Ubuntu</h1>
+            <font size="4">
+                Xin chào các bạn , bài này mình sẽ hướng dẫn về cách up một file chứa code hoặc những dự án về mảng nào đó nằm trong các folder . Mình cũng tình cờ tìm được hướng dẫn và chỉ lại cho các bạn thôi . Cách làm cũng không khó lắm đâu , vài bước là các bạn có thể lưu các file của mình lên và sau tìm lại rất thuận tiện , phòng trường hợp bị xóa mất .
+            </font>
+        </p>
+    </div>
+    <p>
+        <font size="4">Bài này mình chỉ hướng dẫn trên hệ điều hành Ubuntu thôi nhé !</font>
+    </p>
+    <img src="https://kenh14cdn.com/2018/4/19/1-152413073030018041863.gif" class="magnify" align="right" width="250" height="150" alt="" border="2" />
+    <div>
+
+    </div>
+    <div>
+        <font size="4">
+        	Đầu tiên các bạn mở Terminal của mình lên ( Có thể dùng phím tắt Ctrl + Alt + T )
+            <p>
+                Bước đầu tiên ta cài đặt Git trước :
+            </p>
+            <pre>
+        <i>$ sudo apt-get install git</i>
+            </pre>
+            <p>
+                Các bạn nhập password của mình để bắt đầu tiến trình cài đặt , sau khi load xong repository , ta nhấn Y rồi Enter để bắt đầu download và cài đặt Git .
+             </p>
+             <p>
+            	   Sau khi thấy chạy xong , các bạn kiểm tra xem Git đã được cài chưa , gõ lệnh :
+            </p>
+            <pre>
+        <i>$ git --version</i>
+            </pre>
+            <div class="separator" style="clear: both; text-align: center;">
+            <img src="https://i.imgur.com/XpoXQI4.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            <!-- Đưa hình ảnh version vào chỗ này -->
+            </div>
+            <p>
+            	Bảng sẽ hiện lên <i>git version 2.7.4</i> nghĩa là ta đã cài thành công và phiên bản hiện tại của mình là 2.7.4
+            </p>
+            <p>
+            	Tiếp theo bạn truy cập vào <a href="https://github.com/" target="_blank">Github.com</a> là trang web sẽ lưu các file bạn muốn đẩy lên .
+            </p>
+            <!-- Đưa hình ảnh trang Github vào chỗ này-->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/iwIqsZj.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>
+            	Bạn dùng email của mình để đăng kí và đăng nhập vào Github , bước này đơn giản bạn tự làm nhé .
+            </p>
+            <p>
+            	Oke , để đó ta quay lại với các lệnh trên Terminal . Ta dùng tài khoản các bạn vừa lập để vào Git : 
+            </p>
+            <pre>
+         <i>$ git config --global user.name  "< Tên tài khoản Github của bạn >"</i>
+         <i>$ git cònig --global user.email  "< Email bạn dùng để đăng kí >"</i>
+            </pre>
+            <p>
+            	Ví dụ :
+            </p>
+            <p>
+            	Tên tài khoản Github của mình là <i>quangtien18</i> , email là <i>tientq1801@gmail.com</i> , mình gõ lệnh như sau :
+            </p>
+            <pre>
+         <i>$ git config --global user.name "quangtien18"</i>
+         <i>$ git config --global user.email "tientq1801@gmail.com"</i>
+            </pre>
+            <!-- Có thể đưa hình ảnh chỉ vào tên vào chõ này -->
+            <p>
+            	Tiếp theo ta khởi tạo folder của mình , hiểu đơn giản là tạo một New folder trên máy tính vậy . Folder này là nơi chứa những thứ ta muốn đưa lên Github .
+            </p>
+            <pre>
+         <i>$ git init < Tên folder ></i>
+            </pre>
+            <p>
+            	Ví dụ : Mình tạo folder có tên là FlaskTutorial - đây là tên hiển thị trên web để vào các file lưu trên đó nên các bạn lấy tên cho phù hợp nhé, gõ như sau :
+            </p>
+            <pre>
+         <i>$ git init FlaskTutorial</i>
+            </pre>
+            <p>
+            	Các bạn mở nơi chứa files lên sẽ thấy một folder mới được tạo tên bạn vừa dùng , của mình là FlaskTutorial .
+            </p>
+            <!-- Đưa hình ảnh vào -->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/kOkAkHY.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>
+            	Tiếp theo ta di chuyển tới folder FlaskTutorial vừa tạo .
+            </p>
+            <pre>
+         <i>$ cd FlaskTutorial</i>
+            </pre>
+            <p>
+            	Tới đây , bạn hãy copy những file bạn muốn up lên và paste vào folder FlaskTutorial , hoặc bạn cũng có thể tạo một thư mục mới trong folder bằng cách gõ :
+            </p>
+            <pre>
+         <i>$ gedit test.py</i>
+            </pre>
+            <p>
+            	Tại đây ta đã mở một chương trình gedit là một trình soạn thảo có sãn trên Ubuntu , nó cũng giống như notepad . File này có tên test.py , trong file này bạn có thể viết bất kì thứ gì , ví dụ một đoạn code về chương trình bạn đang làm hoặc một chương trình <i>Hello World !</i> hoặc một bài hát là thư tỏ tình :D ,....Vì mình đã có file sẵn nên mình chỉ copy và paste , không tạo mới .
+            </p>
+            <!-- Thêm ảnh những file đã paste vào -->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/jDzEiEe.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>
+            	Sau khi copy xong bạn sử dụng câu lệnh :
+            </p>
+            <pre>
+         <i>$ git status</i>
+            </pre>
+            <p>
+            	Câu lệnh này để kiểm tra trạng thái git hiện tại .
+            </p>
+            <!-- Đưa ảnh ra -->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/wVtbXBp.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>
+                Hình trên những file hiện lên màu đỏ có nghĩa là những file đó chưa được thêm vào chỉ mục ở trên Git . Để thực hiện nó ta làm tiếp như sau :
+            </p>
+            <pre>
+         <i>$ git add < Tên file ></i>
+            </pre>
+            <p>
+            	Ví dụ : ở đây mình có 4 file , mình thực hiện liên tục là 
+            </p>
+            <pre>
+         <i>$ git add templates/</i>
+         <i>$ git add app.py</i>
+         <i>$ git add data.py</i>
+         <i>$ git add data.pyc</i>
+            </pre>
+            <p>Sau khi thực hiện xong ta quay lại bước cũ :</p>
+            <pre>
+         <i>$ git status</i>
+            </pre>
+            <p>Bạn thấy những file của chúng ta đã chuyển sang màu xanh , tức là ta có thể đưa những file này lên Github</p>
+            <!-- Đưa ảnh màu xanh ra-->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/n17xkvM.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>
+            	Tiếp theo ta phải commit tức là tập hợp các tập tin lại và đánh dấu cho nó một nội dung , cũng để cho người xem có thể biết bạn đang sử dụng những file đó cho vấn đề gì .
+            </p>
+            <pre>
+         <i>$ git commit -m  "< Nội dung >"</i>
+            </pre>
+            <p>
+            	Ví dụ : Những file này của mình là một hướng dẫn về Flask , mình sẽ lưu với nội dung : <i>Hướng dẫn Flask</i>
+            </p>
+            <pre>
+         <i>$ git commit -m "Hướng dẫn Flask"</i>
+            </pre>
+            <p>
+            	Oke , ngừng gõ lệnh ta chuyển sang trang wed của Github , ta tiến hành tạo một kho chứa ở trên trang chủ như hình dưới đây
+            </p>
+            <p>Các bạn tạo <i>New repository</i> . tại <i>Repository name</i> các bạn lưu ý phải tạo tên đúng như tên folder các bạn đã tạo ban đầu , của mình là <i>FlaskTutorial</i> , các bạn có thể để chế độ <i>Public</i> , tức là mọi người có thể thấy file của bạn và có thể tải về hoặc bạn để chế độ <i>Private</i> chỉ mình bạn thấy .</p>
+            <!-- Đưa 2 ảnh new và tên ra -->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/F6aKMlk.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+                <img src="https://i.imgur.com/6WDiqOJ.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>Khi bạn nhấn <i>Create repository</i> sẽ ra như hình dưới</p>
+            <!-- Đưa hình ra-->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/f0hk67k.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>
+            	Bây giờ ta sẽ kết nối git ở local tới git trên trang web  bằng lệnh :
+            </p>
+            <pre>
+         <i>$ git remote add < Tên > < url > </i>
+            </pre>
+            <p>Trong đó 'Tên' là tên bạn đặt bất kì , ủl chính là đường link hiện ở hình trên mà mình đang bôi đen , mình sẽ coppy đường link đó lại và paste vào đây .</p>
+            <p>Ví dụ : mình lấy 'Tên' là 'MyGit'</p>
+            <pre>
+         <i>$ git remote add MyGit https://github.com/quangtien18/FlaskTutorial.git</i>
+            </pre>
+            <p>Bước cuối cùng , để đưa file lên ta dùng lệnh :</p>
+            <pre>
+         <i>$ git push < Tên > < Nhánh ></i>
+            </pre>
+            <p>Ví dụ : 'Tên' chính là tên mình lấy ở trên , của mình là 'MyGit' và 'Nhánh' ta sẽ mặc định là 'master'</p>
+            <pre>
+         <i>$ git push MyGit master</i>
+            </pre>
+            <p>Sau đó nó sẽ yêu cầu bạn nhập username và password tài khoản bạn đăng kí trên trang Github</p>
+            <!-- Đưa hình ảnh vào -->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/ALfQ5HR.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>Oke ,tới đây là xong , bạn đã đưa file của mình thành công lên trang Github , bạn hãy vào kiểm tra :D .</p>
+            <!-- Đưa hình ảnh ra-->
+            <div class="separator" style="clear: both; text-align: center;">
+                <img src="https://i.imgur.com/LwKWPNw.png" class="magnify" border="2" alt="Ảnh 1" width="350" height="200" />
+            </div>
+            <p>Cảm ơn các bạn đã theo dõi bài viết của mình :v .</p>
+        </font>
+    </div>
+
+<hr size="2px" color="red" />
+
+<footer>
+<h1><a class="facebook" href="https://www.facebook.com/Kirito1801" target="_blank"><i class="fa fa-facebook"></i></a>&nbsp; &nbsp; &nbsp;<a class="gplus" href="https://plus.google.com/u/1/discover" target="_blank"><i class="fa fa-google-plus"></i></a> &nbsp; &nbsp;<a class="youtube" href="https://www.youtube.com/channel/UCWrFW58KlMxaNoDNpTxkI9g?view_as=subscriber" target="_blank"><i class="fa fa-youtube"></i></a> </h1>
+{% endblock %}

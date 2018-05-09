@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <!-- Đoạn <style></style> này để phân bố bố cũ một trang chia thành các phần : header , section , nav , aside , footer -->
+            <style>
+div.container {
+    width: 100%;
+    border: 1px solid gray;
+}
+ 
+header, footer {
+    padding: 1em;
+    color: white;
+    background-color: blue;
+    clear: left;
+    text-align: center;
+}
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+ 
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+    
+nav ul a {
+    text-decoration: none;
+}
+ 
+article {
+    margin-left: 170px;
+    border-left: 1px solid gray;
+    padding: 1em;
+    overflow: hidden;
+}
+</style>
+            <!-- Cái này để chạm phóng to trên thiết bị di động -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <!-- Cái này để căn chỉnh lề 2 bên cho bố cục toàn trang ,từ chỗ này tới hết </style>
+            Và bên dưới phần <body></body> thêm <div class="content" </div> -->
+                <style>
+                    body {
+	          background: #333;
+                    }
+                    .content {
+	           max-width: 1200px;
+	           margin: auto;
+	           background: LightYellow;
+	           padding: 30px;
+                        }
+                </style>
+
+	      <title>Hướng dẫn up code lên Github</title>
+	      
+                    <!-- Cái này để chèn icon cho phần footer -->
+                    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+        </head>
+                        <body>
+                            <div class="content">
+                            {% block body %}{% endblock %}
+                            </div>
+                        </body>
+                        
+       </html>
